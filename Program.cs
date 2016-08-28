@@ -436,9 +436,9 @@ namespace Syndra
             }
                 
 
-            if (rTarget != null && useR && R.IsReady() && comboDamage > rTarget.Health && !rTarget.IsZombie && !Q.IsReady())
+            if (rTarget != null && useR && R.IsReady() && rTarget.Health < R.GetDamage(rTarget) && !rTarget.IsZombie && !Q.IsReady())
             {
-                R.Cast(rTarget);
+                R.CastOnUnit(rTarget);
             }
 
             //Ignite
